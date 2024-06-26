@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <title>re:educate</title>
+    <style>
+      .button {
+        padding: 20px;
+        font-size: 20px;
+        border: 2px solid;
+        border-radius: 10px;
+        background-color: white;
+        cursor: pointer;
+      }
+      .georgia-button {
+        border-color: red;
+        color: red;
+      }
+      .portugal-button {
+        border-color: green;
+        color: green;
+      }
+    </style>
+  </head>
+  <body style="background-color: white">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 100px;
+      "
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/1200px-Flag_of_Georgia.svg.png"
+        style="width: 400px"
+      />
+      <h1 style="font-size: 60px">VS</h1>
+      <img
+        src="https://cdn.britannica.com/88/3588-050-323A5397/Flag-Portugal.jpg"
+        style="width: 400px"
+      />
+    </div>
+    <div>
+      <h2 style="text-align: center; margin-top: 100px; font-size: 40px">
+        ვინ მოიგებს თამაშს?
+      </h2>
+      <div style="display: flex; justify-content: center; gap: 30px">
+        <button class="button georgia-button" onclick="throwConfetti()">
+          საქართველო
+        </button>
+        <button class="button portugal-button" onmouseover="moveButton(this)">
+          პორტუგალია
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function moveButton(button) {
+        const randomX = Math.random() > 0.5 ? 130 : -130;
+        const randomY = Math.random() > 0.5 ? 130 : -130;
+        button.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      }
+
+      function throwConfetti() {
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti();
+      }
+    </script>
+  </body>
+</html>
